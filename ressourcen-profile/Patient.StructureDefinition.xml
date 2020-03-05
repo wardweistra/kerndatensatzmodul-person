@@ -170,7 +170,6 @@
     </element>
     <element id="Patient.identifier:pid.system">
       <path value="Patient.identifier.system" />
-      <mustSupport value="true" />
       <fixedUri value="https://www.medizininformatik-initiative.de/fhir/core/NamingSystem/patient-identifier" />
     </element>
     <element id="Patient.identifier:pid.assigner">
@@ -252,10 +251,22 @@
       <sliceName value="nachname" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.name.family.extension:nachname.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+    </element>
     <element id="Patient.name.family.extension:vorsatzwort">
       <path value="Patient.name.family.extension" />
       <sliceName value="vorsatzwort" />
       <mustSupport value="true" />
+    </element>
+    <element id="Patient.name.family.extension:vorsatzwort.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="Patient.name.given">
       <path value="Patient.name.given" />
@@ -273,6 +284,9 @@
     </element>
     <element id="Patient.name.prefix.extension:prefix-qualifier.value[x]">
       <path value="Patient.name.prefix.extension.value[x]" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <mustSupport value="true" />
     </element>
     <element id="Patient.name.prefix.extension:prefix-qualifier.value[x]:valueCode">
@@ -291,7 +305,6 @@
     </element>
     <element id="Patient.gender.extension">
       <path value="Patient.gender.extension" />
-      <mustSupport value="true" />
       <slicing>
         <discriminator>
           <type value="value" />
@@ -385,6 +398,10 @@
       <binding>
         <strength value="required" />
       </binding>
+    </element>
+    <element id="Patient.photo">
+      <path value="Patient.photo" />
+      <max value="0" />
     </element>
     <element id="Patient.link">
       <path value="Patient.link" />
